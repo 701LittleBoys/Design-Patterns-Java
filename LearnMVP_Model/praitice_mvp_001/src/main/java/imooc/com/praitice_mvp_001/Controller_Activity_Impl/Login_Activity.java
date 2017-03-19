@@ -15,7 +15,7 @@ import imooc.com.praitice_mvp_001.R;
  * Created by 95262 on 2017/3/18.
  */
 
-public class Login_Activity extends BaseActivity<LoginPresenter,LoginModel> implements View.OnClickListener {
+public class Login_Activity extends BaseActivity<LoginPresenter,LoginModel> implements View.OnClickListener,Login_Controller.view_con {
     //此处设置，我们需要的页面的控件
     private EditText edit_username;
     private EditText edit_password;
@@ -70,4 +70,19 @@ public class Login_Activity extends BaseActivity<LoginPresenter,LoginModel> impl
         }
     }
 
+    @Override
+    public void show_loading_Animation() {
+        progressDialog.show();
+    }
+
+    @Override
+    public void hide_loading_Animation() {
+        progressDialog.dismiss();
+    }
+
+    @Override
+    public void Clear_edit() {
+        edit_password.setText("");
+        edit_username.setText("");
+    }
 }

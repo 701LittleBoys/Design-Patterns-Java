@@ -22,10 +22,9 @@ public abstract class BaseActivity<T extends BasePresenter,E extends BaseModel> 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutID());
-
         activity_context = this;
-        MVP_util.getT(this,0);
-        MVP_util.getT(this,1);
+        mPresenter = MVP_util.getT(this,0);
+        mModel = MVP_util.getT(this,1);
         if (mPresenter != null){
             mPresenter.mContext = this;
         }

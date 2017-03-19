@@ -1,1 +1,1 @@
-include ':app', ':praitice_mvp_001'
+include ':app', ':praitice_mvp_001', ':praitice_mvp_002'
